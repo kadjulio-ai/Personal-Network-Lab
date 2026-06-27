@@ -218,8 +218,5 @@ During this project I learned how to:
 - Deploy a local DNS server
 - Add network monitoring tools
 
----
 
-## License
 
-This project was developed for educational purposes as part of my networking studies.
