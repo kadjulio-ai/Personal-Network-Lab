@@ -56,11 +56,16 @@ The objective was to create an isolated home network for studying networking con
 
 ## TP-Link Configuration
 
+![TP-link dashboard 1](images/tp-link-dashboard-1.png)
+![TP-link dashboard 2](images/tp-link-dashboard-2.png)
+
 ### Operation Mode
 
 - Wireless Router
 
 ### LAN Configuration
+
+![LAN configuration](images/tp-link-dashboard-1.png)
 
 | Setting | Value |
 |---------|-------|
@@ -69,11 +74,15 @@ The objective was to create an isolated home network for studying networking con
 
 ### WAN Configuration
 
+![WAN configuration](images/wan-configuration.png)
+
 | Setting | Value |
 |---------|-------|
 | Connection Type | Dynamic IP (DHCP) |
 
 ### DHCP Server
+
+![DHCP configuration](images/dhcp-configuration)
 
 - Enabled
 
@@ -138,13 +147,28 @@ Configure the router again from scratch.
 
 ## Validation
 
-The configuration was validated by confirming:
+The configuration was validated by:
 
 - Successful access to the TP-Link management interface.
-- PC received an IP address in the 192.168.50.0/24 network.
 - Default gateway became 192.168.50.1.
 - TP-Link WAN interface received an IP address from the ISP modem.
 - Internet access was working correctly.
+
+### IP Configuration
+
+![ipconfig Output](images/ipconfig.png)
+
+- PC received an IP address in the 192.168.50.0/24 network. 
+
+### Traceroute Verification
+
+![Traceroute Output](images/tracert-double-nat.png)
+
+- The traceroute confirmed the Double Nat configuration:
+1. First hop → TP-Link (`192.168.50.1`)
+2. Second hop → ISP Modem (`192.168.15.1`)
+
+This confirms that all traffic is routed through the TP-Link before reaching the ISP modem.
 
 ---
 
